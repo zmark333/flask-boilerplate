@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.search-container {
+    padding: 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+.search-container input {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+}
+.tasks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.task {
+    background-color: #e2e2e2;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.task h3 {
+    margin: 0;
+    font-size: 18px;
+}
+.task p {
+    margin: 10px 0 0;
+    font-size: 14px;
+}
+
+
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+.achievements, .activities {
+    margin: 20px 0;
+}
+.achievements .achievement, .activities .activity {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.activities-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.activities .activity {
+    width: calc(33% - 40px);
+    margin: 10px;
+    text-align: left;
+}
+.activities .activity h3 {
+    margin: 0;
+    font-size: 18px;
+}
+.activities .activity p {
+    margin: 10px 0 0;
+    font-size: 14px;
+}
+
+
+.achievements, .tasks {
+    margin: 20px 0;
+}
+
+.achievements .achievement, .tasks .task {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tasks-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tasks .task {
+    width: calc(33% - 40px);
+    margin: 10px;
+    text-align: left;
+}
+.tasks .task h3 {
+    margin: 0;
+    font-size: 18px;
+}
+.tasks .task p {
+    margin: 10px 0 0;
+    font-size: 14px;
+}
+
+.tasks-list, .addresses-container {
+    margin: 20px 0;
+}
+
+.address {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.address select {
+    margin-left: 10px;
+}

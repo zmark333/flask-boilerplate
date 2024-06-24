@@ -1,9 +1,9 @@
 {% extends 'layouts/main.html' %}
-{% block title %}About{% endblock %}
+{% block title %}Home{% endblock %}
 {% block content %}
 
 <div class="container">
-  <h1>Your Points</h1>
+  <h1>Welcome, {{ name }}</h1>
   <p>You have <strong>{{ points }}</strong> points.</p>
   
   <div class="achievements">
@@ -22,18 +22,16 @@
       </p>
   </div>
   
-  <div class="activities">
-      <h2>Activities</h2>
-      <div class="activities-list">
-          {% for activity in activities %}
-              <div class="activity">
-                  <h3>{{ activity.name }}</h3>
-                  <p>{{ activity.description }}</p>
-                  <p>Cost: {{ activity.cost }} points</p>
+  <div class="tasks">
+      <h2>Upcoming Tasks</h2>
+      <div class="tasks-list">
+          {% for task in upcoming_tasks %}
+              <div class="task">
+                  <h3>{{ task.name }}</h3>
+                  <p>{{ task.description }}</p>
               </div>
           {% endfor %}
       </div>
   </div>
 </div>
-
 {% endblock %}

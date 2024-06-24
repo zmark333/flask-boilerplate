@@ -1,0 +1,40 @@
+{% extends 'layouts/main.html' %}
+{% block title %}About{% endblock %}
+{% block content %}
+
+<div class="container">
+  <h2>Upcoming Tasks</h2>
+  <div class="tasks-list">
+      {% for task in tasks %}
+          <form method="POST">
+              <input type="hidden" name="task_id" value="{{ task.id }}">
+              <div class="task">
+                  <h3>{{ task.name }}</h3>
+                  <p>{{ task.description }}</p>
+                  <button type="submit">Show Addresses</button>
+              </div>
+          </form>
+      {% endfor %}
+  </div>
+  
+  <form method="POST">
+      <input type="text" name="search_query" value="{{ search_query }}" placeholder="Search for addresses...">
+      <button type="submit">Search</button>
+  </form>
+  
+  <div class="addresses-container">
+      {% for address in addresses %}
+          <div class="address">
+              {{ address }}
+              <select>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+              </select>
+          </div>
+      {% endfor %}
+  </div>
+</div>
+{% endblock %}

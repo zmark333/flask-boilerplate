@@ -2,9 +2,37 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 
-<div class="page-header">
-  <h1>Sticky footer with fixed navbar</h1>
+
+<div class="search-container">
+  <input type="text" id="searchBar" placeholder="Search for tasks...">
 </div>
-<p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added within <code>#wrap</code> with <code>padding-top: 60px;</code> on the <code>.container</code>.</p>
+<div class="tasks-container" id="tasksContainer">
+  <!-- Tasks will be loaded here -->
+</div>
+
+<script>
+  document.getElementById('searchBar').addEventListener('keyup', function() {
+      var query = this.value;
+      fetch('/search', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ query: query })
+      })
+      .then(response => response.json())
+      .then(data => {
+          var tasksContainer = document.getElementById('tasksContainer');
+          tasksContainer.innerHTML = '';
+
+          data.forEach(task => {
+              var taskDiv = document.createElement('div');
+              taskDiv.className = 'task';
+              taskDiv.innerHTML = `<h3>${task.title}</h3><p>${task.description}</p>`;
+              tasksContainer.appendChild(taskDiv);
+          });
+      });
+  });
+</script>
 
 {% endblock %}
